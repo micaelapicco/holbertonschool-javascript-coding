@@ -8,7 +8,7 @@ request.get(url, (error, response, body) => {
   const movie = JSON.parse(body).results;
   movie.forEach(movie => {
     movie.characters.forEach(characters => {
-      if (characters === 'https://swapi-api.hbtn.io/api/people/18/') count += 1;
+      if (characters.includes('18')) count += 1;
     });
   });
   console.log(count);
